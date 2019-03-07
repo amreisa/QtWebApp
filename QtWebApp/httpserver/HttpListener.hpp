@@ -3,16 +3,16 @@
   @author Stefan Frings
 */
 
-#ifndef HTTPLISTENER_H
-#define HTTPLISTENER_H
+#ifndef HTTPLISTENER_HPP
+#define HTTPLISTENER_HPP
 
 #include <QTcpServer>
 #include <QSettings>
 #include <QBasicTimer>
-#include "httpglobal.h"
-#include "httpconnectionhandler.h"
-#include "httpconnectionhandlerpool.h"
-#include "httprequesthandler.h"
+#include "HttpGlobal.hpp"
+#include "HttpConnectionHandler.hpp"
+#include "HttpConnectionHandlerPool.hpp"
+#include "HttpRequestHandler.hpp"
 
 namespace stefanfrings {
 
@@ -43,7 +43,7 @@ namespace stefanfrings {
 
 class DECLSPEC HttpListener : public QTcpServer {
     Q_OBJECT
-    Q_DISABLE_COPY(HttpListener)
+    Q_DISABLE_COPY( HttpListener )
 public:
 
     /**
@@ -59,7 +59,7 @@ public:
       @param parent Parent object.
       @warning Ensure to close or delete the listener before deleting the request handler.
     */
-    HttpListener(const QSettings* settings, HttpRequestHandler* requestHandler, QObject* parent=nullptr);
+    HttpListener( const QSettings* settings, HttpRequestHandler* requestHandler, QObject* parent=nullptr );
 
     /** Destructor */
     virtual ~HttpListener();
@@ -78,7 +78,7 @@ public:
 protected:
 
     /** Serves new incoming connection requests */
-    void incomingConnection(tSocketDescriptor socketDescriptor);
+    void incomingConnection( tSocketDescriptor socketDescriptor );
 
 private:
 
@@ -98,10 +98,10 @@ signals:
       @param socketDescriptor references the accepted connection.
     */
 
-    void handleConnection(tSocketDescriptor socketDescriptor);
+    void handleConnection( tSocketDescriptor socketDescriptor );
 
 };
 
 } // end of namespace
 
-#endif // HTTPLISTENER_H
+#endif // HTTPLISTENER_HPP

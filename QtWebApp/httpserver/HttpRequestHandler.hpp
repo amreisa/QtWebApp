@@ -3,12 +3,12 @@
   @author Stefan Frings
 */
 
-#ifndef HTTPREQUESTHANDLER_H
-#define HTTPREQUESTHANDLER_H
+#ifndef HTTPREQUESTHANDLER_HPP
+#define HTTPREQUESTHANDLER_HPP
 
-#include "httpglobal.h"
-#include "httprequest.h"
-#include "httpresponse.h"
+#include "HttpGlobal.hpp"
+#include "HttpRequest.hpp"
+#include "HttpResponse.hpp"
 
 namespace stefanfrings {
 
@@ -26,14 +26,14 @@ namespace stefanfrings {
 
 class DECLSPEC HttpRequestHandler : public QObject {
     Q_OBJECT
-    Q_DISABLE_COPY(HttpRequestHandler)
+    Q_DISABLE_COPY( HttpRequestHandler )
 public:
 
     /**
      * Constructor.
      * @param parent Parent object.
      */
-    HttpRequestHandler(QObject* parent=nullptr);
+    HttpRequestHandler( QObject* parent=nullptr );
 
     /** Destructor */
     virtual ~HttpRequestHandler();
@@ -44,10 +44,10 @@ public:
       @param response Must be used to return the response
       @warning This method must be thread safe
     */
-    virtual void service(HttpRequest& request, HttpResponse& response);
+    virtual void service( HttpRequest& request, HttpResponse& response );
 
 };
 
 } // end of namespace
 
-#endif // HTTPREQUESTHANDLER_H
+#endif // HTTPREQUESTHANDLER_HPP

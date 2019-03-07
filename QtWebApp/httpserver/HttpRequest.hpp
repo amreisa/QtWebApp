@@ -3,8 +3,8 @@
   @author Stefan Frings
 */
 
-#ifndef HTTPREQUEST_H
-#define HTTPREQUEST_H
+#ifndef HTTPREQUEST_HPP
+#define HTTPREQUEST_HPP
 
 #include <QByteArray>
 #include <QHostAddress>
@@ -14,7 +14,7 @@
 #include <QSettings>
 #include <QTemporaryFile>
 #include <QUuid>
-#include "httpglobal.h"
+#include "HttpGlobal.hpp"
 
 namespace stefanfrings {
 
@@ -36,7 +36,7 @@ namespace stefanfrings {
 */
 
 class DECLSPEC HttpRequest {
-    Q_DISABLE_COPY(HttpRequest)
+    Q_DISABLE_COPY( HttpRequest )
     friend class HttpSessionStore;
 
 public:
@@ -48,7 +48,7 @@ public:
       Constructor.
       @param settings Configuration settings
     */
-    HttpRequest(const QSettings* settings);
+    HttpRequest( const QSettings* settings );
 
     /**
       Destructor.
@@ -61,7 +61,7 @@ public:
       until the status is RequestStatus::complete or RequestStatus::abort.
       @param socket Source of the data
     */
-    void readFromSocket(QTcpSocket *socket);
+    void readFromSocket( QTcpSocket *socket );
 
     /**
       Get the status of this reqeust.
@@ -87,13 +87,13 @@ public:
       @return If the header occurs multiple times, only the last
       one is returned.
     */
-    QByteArray getHeader(const QByteArray& name) const;
+    QByteArray getHeader( const QByteArray& name ) const;
 
     /**
       Get the values of a HTTP request header.
       @param name Name of the header, not case-senitive.
     */
-    QList<QByteArray> getHeaders(const QByteArray& name) const;
+    QList<QByteArray> getHeaders( const QByteArray& name ) const;
 
     /**
      * Get all HTTP request headers. Note that the header names
@@ -107,13 +107,13 @@ public:
       @return If the parameter occurs multiple times, only the last
       one is returned.
     */
-    QByteArray getParameter(const QByteArray& name) const;
+    QByteArray getParameter( const QByteArray& name ) const;
 
     /**
       Get the values of a HTTP request parameter.
       @param name Name of the parameter, case-sensitive.
     */
-    QList<QByteArray> getParameters(const QByteArray& name) const;
+    QList<QByteArray> getParameters( const QByteArray& name ) const;
 
     /** Get all HTTP request parameters. */
     QMultiMap<QByteArray,QByteArray> getParameterMap() const;
@@ -127,7 +127,7 @@ public:
       @param source The url encoded strings
       @see QUrl::toPercentEncoding for the reverse direction
     */
-    static QByteArray urlDecode(const QByteArray source);
+    static QByteArray urlDecode( const QByteArray source );
 
     /**
       Get an uploaded file. The file is already open. It will
@@ -137,13 +137,13 @@ public:
       For uploaded files, the method getParameters() returns
       the original fileName as provided by the calling web browser.
     */
-    QTemporaryFile* getUploadedFile(const QByteArray fieldName) const;
+    QTemporaryFile* getUploadedFile( const QByteArray fieldName ) const;
 
     /**
       Get the value of a cookie.
       @param name Name of the cookie
     */
-    QByteArray getCookie(const QByteArray& name) const;
+    QByteArray getCookie( const QByteArray& name ) const;
 
     /** Get all cookies. */
     QMap<QByteArray,QByteArray>& getCookieMap();
@@ -215,13 +215,13 @@ private:
     void parseMultiPartFile();
 
     /** Sub-procedure of readFromSocket(), read the first line of a request. */
-    void readRequest(QTcpSocket* socket);
+    void readRequest( QTcpSocket* socket );
 
     /** Sub-procedure of readFromSocket(), read header lines. */
-    void readHeader(QTcpSocket* socket);
+    void readHeader( QTcpSocket* socket );
 
     /** Sub-procedure of readFromSocket(), read the request body. */
-    void readBody(QTcpSocket* socket);
+    void readBody( QTcpSocket* socket );
 
     /** Sub-procedure of readFromSocket(), extract and decode request parameters. */
     void decodeRequestParams();
@@ -236,4 +236,4 @@ private:
 
 } // end of namespace
 
-#endif // HTTPREQUEST_H
+#endif // HTTPREQUEST_HPP

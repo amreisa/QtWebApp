@@ -3,8 +3,8 @@
   @author Stefan Frings
 */
 
-#ifndef LOGGLOBAL_H
-#define LOGGLOBAL_H
+#ifndef HTTPGLOBAL_HPP
+#define HTTPGLOBAL_HPP
 
 #include <QtGlobal>
 
@@ -20,5 +20,9 @@
 #define DECLSPEC
 #endif
 
-#endif // LOGGLOBAL_H
+/** Get the library version number */
+DECLSPEC const char* getQtWebAppLibVersion();
+
+
+#endif // HTTPGLOBAL_HPP
 

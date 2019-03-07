@@ -1,12 +1,12 @@
-#ifndef HTTPCONNECTIONHANDLERPOOL_H
-#define HTTPCONNECTIONHANDLERPOOL_H
+#ifndef HTTPCONNECTIONHANDLERPOOL_HPP
+#define HTTPCONNECTIONHANDLERPOOL_HPP
 
 #include <QList>
 #include <QTimer>
 #include <QObject>
 #include <QMutex>
-#include "httpglobal.h"
-#include "httpconnectionhandler.h"
+#include "HttpGlobal.hpp"
+#include "HttpConnectionHandler.hpp"
 
 namespace stefanfrings {
 
@@ -47,7 +47,7 @@ namespace stefanfrings {
 
 class DECLSPEC HttpConnectionHandlerPool : public QObject {
     Q_OBJECT
-    Q_DISABLE_COPY(HttpConnectionHandlerPool)
+    Q_DISABLE_COPY( HttpConnectionHandlerPool )
 public:
 
     /**
@@ -56,7 +56,7 @@ public:
       @param requestHandler The handler that will process each received HTTP request.
       @warning The requestMapper gets deleted by the destructor of this pool
     */
-    HttpConnectionHandlerPool(const QSettings* settings, HttpRequestHandler *requestHandler);
+    HttpConnectionHandlerPool( const QSettings* settings, HttpRequestHandler *requestHandler );
 
     /** Destructor */
     virtual ~HttpConnectionHandlerPool();
@@ -96,4 +96,4 @@ private slots:
 
 } // end of namespace
 
-#endif // HTTPCONNECTIONHANDLERPOOL_H
+#endif // HTTPCONNECTIONHANDLERPOOL_HPP

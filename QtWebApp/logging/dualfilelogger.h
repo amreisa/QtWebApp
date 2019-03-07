@@ -23,7 +23,7 @@ namespace stefanfrings {
 
 class DECLSPEC DualFileLogger : public Logger {
     Q_OBJECT
-    Q_DISABLE_COPY(DualFileLogger)
+    Q_DISABLE_COPY( DualFileLogger )
 public:
 
     /**
@@ -39,8 +39,8 @@ public:
       @param refreshInterval Interval of checking for changed config settings in msec, or 0=disabled
       @param parent Parent object.
     */
-    DualFileLogger(QSettings* firstSettings, QSettings* secondSettings,
-                   const int refreshInterval=10000, QObject *parent = nullptr);
+    DualFileLogger( QSettings* firstSettings, QSettings* secondSettings,
+                    const int refreshInterval=10000, QObject *parent = nullptr );
 
     /**
       Decorate and log the message, if type>=minLevel.
@@ -52,8 +52,8 @@ public:
       @param line Line Number of the source file, where the message was generated (usually filles with the macro __func__ or __FUNCTION__)
       @see LogMessage for a description of the message decoration.
     */
-    virtual void log(const QtMsgType type, const QString& message, const QString &file="",
-                     const QString &function="", const int line=0);
+    virtual void log( const QtMsgType type, const QString& message, const QString &file="",
+                      const QString &function="", const int line=0 );
 
     /**
       Clear the thread-local data of the current thread.
@@ -61,7 +61,7 @@ public:
       @param buffer Whether to clear the backtrace buffer
       @param variables Whether to clear the log variables
     */
-    virtual void clear(const bool buffer=true, const bool variables=true);
+    virtual void clear( const bool buffer=true, const bool variables=true );
 
 private:
 

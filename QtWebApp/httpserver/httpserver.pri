@@ -8,26 +8,28 @@ CONFIG(debug, debug|release) {
     DEFINES += SUPERVERBOSE
 }
 
-HEADERS += $$PWD/httpglobal.h \
-           $$PWD/httplistener.h \
-           $$PWD/httpconnectionhandler.h \
-           $$PWD/httpconnectionhandlerpool.h \
-           $$PWD/httprequest.h \
-           $$PWD/httpresponse.h \
-           $$PWD/httpcookie.h \
-           $$PWD/httprequesthandler.h \
-           $$PWD/httpsession.h \
-           $$PWD/httpsessionstore.h \
-           $$PWD/staticfilecontroller.h
+HEADERS += \
+           $$PWD/HttpConnectionHandler.hpp \
+           $$PWD/HttpConnectionHandlerPool.hpp \
+    $$PWD/HttpCookie.hpp \
+    $$PWD/HttpGlobal.hpp \
+    $$PWD/HttpListener.hpp \
+    $$PWD/HttpRequest.hpp \
+    $$PWD/HttpRequestHandler.hpp \
+    $$PWD/HttpResponse.hpp \
+    $$PWD/HttpSession.hpp \
+    $$PWD/HttpSessionStore.hpp \
+    $$PWD/StaticFileController.hpp
 
-SOURCES += $$PWD/httpglobal.cpp \
-           $$PWD/httplistener.cpp \
-           $$PWD/httpconnectionhandler.cpp \
-           $$PWD/httpconnectionhandlerpool.cpp \
-           $$PWD/httprequest.cpp \
-           $$PWD/httpresponse.cpp \
-           $$PWD/httpcookie.cpp \
-           $$PWD/httprequesthandler.cpp \
-           $$PWD/httpsession.cpp \
-           $$PWD/httpsessionstore.cpp \
-           $$PWD/staticfilecontroller.cpp
+SOURCES += \
+           $$PWD/HttpConnectionHandler.cpp \
+    $$PWD/HttpConnectionHandlerPool.cpp \
+    $$PWD/HttpCookie.cpp \
+    $$PWD/HttpListener.cpp \
+    $$PWD/HttpGlobal.cpp \
+    $$PWD/HttpRequest.cpp \
+    $$PWD/HttpRequestHandler.cpp \
+    $$PWD/HttpResponse.cpp \
+    $$PWD/HttpSession.cpp \
+    $$PWD/HttpSessionStore.cpp \
+    $$PWD/StaticFileController.cpp

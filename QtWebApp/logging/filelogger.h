@@ -50,7 +50,7 @@ namespace stefanfrings {
 
 class DECLSPEC FileLogger : public Logger {
     Q_OBJECT
-    Q_DISABLE_COPY(FileLogger)
+    Q_DISABLE_COPY( FileLogger )
 public:
 
     /**
@@ -64,7 +64,7 @@ public:
       @param refreshInterval Interval of checking for changed config settings in msec, or 0=disabled
       @param parent Parent object
     */
-    FileLogger(QSettings* settings, const int refreshInterval=10000, QObject* parent = nullptr);
+    FileLogger( QSettings* settings, const int refreshInterval=10000, QObject* parent = nullptr );
 
     /**
       Destructor. Closes the file.
@@ -72,7 +72,7 @@ public:
     virtual ~FileLogger();
 
     /** Write a message to the log file */
-    virtual void write(const LogMessage* logMessage);
+    virtual void write( const LogMessage* logMessage );
 
 protected:
 
@@ -82,7 +82,7 @@ protected:
       This method is thread-safe.
       @param event used to distinguish between the two timers.
     */
-    void timerEvent(QTimerEvent* event);
+    void timerEvent( QTimerEvent* event );
 
 private:
 
