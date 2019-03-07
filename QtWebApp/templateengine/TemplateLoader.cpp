@@ -3,7 +3,7 @@
   @author Stefan Frings
 */
 
-#include "templateloader.h"
+#include "TemplateLoader.hpp"
 #include <QFile>
 #include <QFileInfo>
 #include <QStringList>

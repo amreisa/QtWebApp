@@ -1,4 +1,4 @@
-#include "templatecache.h"
+#include "TemplateCache.hpp"
 #include <QDateTime>
 #include <QStringList>
 #include <QSet>

@@ -3,16 +3,16 @@
   @author Stefan Frings
 */
 
-#ifndef FILELOGGER_H
-#define FILELOGGER_H
+#ifndef FILELOGGER_HPP
+#define FILELOGGER_HPP
 
 #include <QtGlobal>
 #include <QSettings>
 #include <QFile>
 #include <QMutex>
 #include <QBasicTimer>
-#include "logglobal.h"
-#include "logger.h"
+#include "LogGlobal.hpp"
+#include "Logger.hpp"
 
 namespace stefanfrings {
 
@@ -126,4 +126,4 @@ private:
 
 } // end of namespace
 
-#endif // FILELOGGER_H
+#endif // FILELOGGER_HPP

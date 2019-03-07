@@ -3,7 +3,7 @@
   @author Stefan Frings
 */
 
-#include "template.h"
+#include "Template.hpp"
 #include <QFileInfo>
 
 using namespace stefanfrings;

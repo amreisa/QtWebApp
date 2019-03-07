@@ -5,7 +5,7 @@
 
 #include "static.h"
 #include "startup.h"
-#include "filelogger.h"
+#include "FileLogger.hpp"
 #include "requesthandler.h"
 #include <QDir>
 #include <QFile>

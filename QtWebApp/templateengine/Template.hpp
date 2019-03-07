@@ -3,8 +3,8 @@
   @author Stefan Frings
 */
 
-#ifndef TEMPLATE_H
-#define TEMPLATE_H
+#ifndef TEMPLATE_HPP
+#define TEMPLATE_HPP
 
 #include <QString>
 #include <QRegExp>
@@ -12,7 +12,7 @@
 #include <QTextCodec>
 #include <QFile>
 #include <QString>
-#include "templateglobal.h"
+#include "TemplateGlobal.hpp"
 
 namespace stefanfrings {
 
@@ -169,4 +169,4 @@ private:
 
 } // end of namespace
 
-#endif // TEMPLATE_H
+#endif // TEMPLATE_HPP

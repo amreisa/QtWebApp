@@ -6,9 +6,9 @@
 #ifndef SESSIONCONTROLLER_H
 #define SESSIONCONTROLLER_H
 
-#include "httprequest.h"
-#include "httpresponse.h"
-#include "httprequesthandler.h"
+#include <HttpRequest.hpp>
+#include <HttpResponse.hpp>
+#include <HttpRequestHandler.hpp>
 
 using namespace stefanfrings;
 
@@ -18,14 +18,14 @@ using namespace stefanfrings;
 
 class SessionController : public HttpRequestHandler {
     Q_OBJECT
-    Q_DISABLE_COPY(SessionController)
+    Q_DISABLE_COPY( SessionController )
 public:
 
     /** Constructor */
     SessionController();
 
     /** Generates the response */
-    void service(HttpRequest& request, HttpResponse& response);
+    void service( HttpRequest& request, HttpResponse& response );
 };
 
 #endif // SESSIONCONTROLLER_H

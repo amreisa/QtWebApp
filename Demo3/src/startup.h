@@ -8,7 +8,7 @@
 
 #include <QtCore/QCoreApplication>
 #include "qtservice.h"
-#include "httplistener.h"
+#include <HttpListener.hpp>
 
 using namespace stefanfrings;
 
@@ -21,7 +21,7 @@ class Startup : public QtService<QCoreApplication>
 public:
 
     /** Constructor */
-    Startup(int argc, char *argv[]);
+    Startup( int argc, char *argv[] );
 
 protected:
 
@@ -41,7 +41,6 @@ private:
      * Listens for HTTP connections.
      */
     HttpListener* listener;
-
 };
 
 #endif // STARTUP_H

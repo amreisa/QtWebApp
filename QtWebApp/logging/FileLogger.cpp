@@ -3,7 +3,7 @@
   @author Stefan Frings
 */
 
-#include "filelogger.h"
+#include "FileLogger.hpp"
 #include <QTime>
 #include <QStringList>
 #include <QThread>

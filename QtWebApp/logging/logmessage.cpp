@@ -3,7 +3,7 @@
   @author Stefan Frings
 */
 
-#include "logmessage.h"
+#include "LogMessage.hpp"
 #include <QThread>
 
 using namespace stefanfrings;

@@ -1,11 +1,18 @@
 INCLUDEPATH += $$PWD
 DEPENDPATH += $$PWD
 
-HEADERS += $$PWD/templateglobal.h
-HEADERS += $$PWD/template.h 
-HEADERS += $$PWD/templateloader.h 
-HEADERS += $$PWD/templatecache.h
+HEADERS += \
+    $$PWD/Template.hpp \
+    $$PWD/TemplateGlobal.hpp \
+    $$PWD/TemplateCache.hpp \
+    $$PWD/TemplateLoader.hpp
+HEADERS += 
+HEADERS += 
+HEADERS +=
 
-SOURCES += $$PWD/template.cpp 
-SOURCES += $$PWD/templateloader.cpp 
-SOURCES += $$PWD/templatecache.cpp
+SOURCES += \ 
+    $$PWD/Template.cpp \
+    $$PWD/TemplateCache.cpp \
+    $$PWD/TemplateLoader.cpp
+SOURCES += 
+SOURCES +=

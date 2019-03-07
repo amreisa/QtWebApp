@@ -4,31 +4,27 @@
 */
 
 #include "requesthandler.h"
-#include "filelogger.h"
+#include "FileLogger.hpp"
 
 /** Logger class */
 extern FileLogger* logger;
 
-RequestHandler::RequestHandler(QObject* parent)
-    :HttpRequestHandler(parent)
-{}
+RequestHandler::RequestHandler( QObject* parent ) : HttpRequestHandler( parent ) {}
 
-void RequestHandler::service(HttpRequest& request, HttpResponse& response)
-{
-    QByteArray path=request.getPath();
-    qDebug("Conroller: path=%s",path.data());
+void RequestHandler::service( HttpRequest& request, HttpResponse& response ) {
+    QByteArray path = request.getPath();
+    qDebug( "Conroller: path=%s",path.data() );
 
     // Set a response header
-    response.setHeader("Content-Type", "text/html; charset=ISO-8859-1");
+    response.setHeader( "Content-Type", "text/html; charset=ISO-8859-1" );
 
     // Return a simple HTML document
-    response.write("<html><body>Hello World</body></html>",true);
+    response.write( "<html><body>Hello World</body></html>", true );
 
-    qDebug("Conroller: finished request");
+    qDebug( "Conroller: finished request" );
 
     // Clear the log buffer
-    if (logger)
-    {
+    if ( logger ) {
        logger->clear();
     }
 }

@@ -6,9 +6,9 @@
 #ifndef TEMPLATECONTROLLER_H
 #define TEMPLATECONTROLLER_H
 
-#include "httprequest.h"
-#include "httpresponse.h"
-#include "httprequesthandler.h"
+#include <HttpRequest.hpp>
+#include <HttpResponse.hpp>
+#include <HttpRequestHandler.hpp>
 
 using namespace stefanfrings;
 
@@ -19,14 +19,14 @@ using namespace stefanfrings;
 
 class TemplateController : public HttpRequestHandler {
     Q_OBJECT
-    Q_DISABLE_COPY(TemplateController)
+    Q_DISABLE_COPY( TemplateController )
 public:
 
     /** Constructor */
     TemplateController();
 
     /** Generates the response */
-    void service(HttpRequest& request, HttpResponse& response);
+    void service( HttpRequest& request, HttpResponse& response );
 };
 
 #endif // TEMPLATECONTROLLER_H

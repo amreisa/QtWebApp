@@ -3,15 +3,15 @@
   @author Stefan Frings
 */
 
-#ifndef DUALFILELOGGER_H
-#define DUALFILELOGGER_H
+#ifndef DUALFILELOGGER_HPP
+#define DUALFILELOGGER_HPP
 
 #include <QString>
 #include <QSettings>
 #include <QtGlobal>
-#include "logglobal.h"
-#include "logger.h"
-#include "filelogger.h"
+#include "LogGlobal.hpp"
+#include "Logger.hpp"
+#include "FileLogger.hpp"
 
 namespace stefanfrings {
 
@@ -75,4 +75,4 @@ private:
 
 } // end of namespace
 
-#endif // DUALFILELOGGER_H
+#endif // DUALFILELOGGER_HPP

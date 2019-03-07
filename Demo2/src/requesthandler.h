@@ -6,7 +6,7 @@
 #ifndef REQUESTHANDLER_H
 #define REQUESTHANDLER_H
 
-#include <httpserver/httprequesthandler.h>
+#include <HttpRequestHandler.hpp>
 
 using namespace stefanfrings;
 
@@ -16,14 +16,14 @@ using namespace stefanfrings;
 
 class RequestHandler : public HttpRequestHandler {
     Q_OBJECT
-    Q_DISABLE_COPY(RequestHandler)
+    Q_DISABLE_COPY( RequestHandler )
 public:
 
     /**
       Constructor.
       @param parent Parent object
     */
-    RequestHandler(QObject* parent=0);
+    RequestHandler( QObject* parent = nullptr );
 
     /**
       Destructor
@@ -35,8 +35,7 @@ public:
       @param request The received HTTP request
       @param response Must be used to return the response
     */
-    void service(HttpRequest& request, HttpResponse& response);
-
+    void service( HttpRequest& request, HttpResponse& response );
 };
 
 #endif // REQUESTHANDLER_H

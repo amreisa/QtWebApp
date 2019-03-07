@@ -6,9 +6,9 @@
 #ifndef DUMPCONTROLLER_H
 #define DUMPCONTROLLER_H
 
-#include "httprequest.h"
-#include "httpresponse.h"
-#include "httprequesthandler.h"
+#include <HttpRequest.hpp>
+#include <HttpResponse.hpp>
+#include <HttpRequestHandler.hpp>
 
 using namespace stefanfrings;
 
@@ -18,14 +18,14 @@ using namespace stefanfrings;
 
 class DumpController : public HttpRequestHandler {
     Q_OBJECT
-    Q_DISABLE_COPY(DumpController)
+    Q_DISABLE_COPY( DumpController )
 public:
 
     /** Constructor */
     DumpController();
 
     /** Generates the response */
-    void service(HttpRequest& request, HttpResponse& response);
+    void service( HttpRequest& request, HttpResponse& response );
 };
 
 #endif // DUMPCONTROLLER_H

@@ -1,9 +1,9 @@
-#ifndef TEMPLATECACHE_H
-#define TEMPLATECACHE_H
+#ifndef TEMPLATECACHE_HPP
+#define TEMPLATECACHE_HPP
 
 #include <QCache>
-#include "templateglobal.h"
-#include "templateloader.h"
+#include "TemplateGlobal.hpp"
+#include "TemplateLoader.hpp"
 
 namespace stefanfrings {
 
@@ -86,4 +86,4 @@ private:
 
 } // end of namespace
 
-#endif // TEMPLATECACHE_H
+#endif // TEMPLATECACHE_HPP

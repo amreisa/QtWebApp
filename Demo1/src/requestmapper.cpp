@@ -5,8 +5,8 @@
 
 #include <QCoreApplication>
 #include "requestmapper.h"
-#include "filelogger.h"
-#include "staticfilecontroller.h"
+#include "FileLogger.hpp"
+#include <StaticFileController.hpp>
 #include "controller/dumpcontroller.h"
 #include "controller/templatecontroller.h"
 #include "controller/formcontroller.h"
@@ -31,8 +31,7 @@ RequestMapper::~RequestMapper()
     qDebug("RequestMapper: deleted");
 }
 
-
-void RequestMapper::service(HttpRequest& request, HttpResponse& response)
+void RequestMapper::service( HttpRequest& request, HttpResponse& response )
 {
     QByteArray path=request.getPath();
     qDebug("RequestMapper: path=%s",path.data());

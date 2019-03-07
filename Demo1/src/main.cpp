@@ -5,11 +5,11 @@
 
 #include <QCoreApplication>
 #include <QDir>
-#include "httplistener.h"
-#include "templatecache.h"
-#include "httpsessionstore.h"
-#include "staticfilecontroller.h"
-#include "filelogger.h"
+#include <HttpListener.hpp>
+#include "TemplateCache.hpp"
+#include <HttpSessionStore.hpp>
+#include <StaticFileController.hpp>
+#include "FileLogger.hpp"
 #include "requestmapper.h"
 
 using namespace stefanfrings;
@@ -42,43 +42,39 @@ QString searchConfigFile()
     searchList.append(binDir+"/../../"+appName+"/etc"); // for development with shadow build
     searchList.append(binDir+"/../../../"+appName+"/etc"); // for development with shadow build
     searchList.append(binDir+"/../../../../"+appName+"/etc"); // for development with shadow build
-    searchList.append(binDir+"/../../../../../"+appName+"/etc"); // for development with shadow build
-    searchList.append(QDir::rootPath()+"etc/opt");
-    searchList.append(QDir::rootPath()+"etc");
+    searchList.append( binDir+"/../../../../../"+appName+"/etc" ); // for development with shadow build
+    searchList.append( QDir::rootPath()+"etc/opt" );
+    searchList.append( QDir::rootPath()+"etc" );
 
-    foreach (QString dir, searchList)
-    {
-        QFile file(dir+"/"+fileName);
-        if (file.exists())
-        {
+    foreach ( QString dir, searchList ) {
+        QFile file( dir+"/"+fileName );
+        if ( file.exists() ) {
             // found
-            fileName=QDir(file.fileName()).canonicalPath();
-            qDebug("Using config file %s",qPrintable(fileName));
+            fileName = QDir( file.fileName() ).canonicalPath();
+            qDebug( "Using config file %s", qPrintable( fileName ) );
             return fileName;
         }
     }
 
     // not found
-    foreach (QString dir, searchList)
-    {
-        qWarning("%s/%s not found",qPrintable(dir),qPrintable(fileName));
+    foreach ( QString dir, searchList ) {
+        qWarning( "%s/%s not found", qPrintable( dir ), qPrintable( fileName ) );
     }
-    qFatal("Cannot find config file %s",qPrintable(fileName));
+    qFatal( "Cannot find config file %s", qPrintable( fileName ) );
 }
 
 
 /**
   Entry point of the program.
 */
-int main(int argc, char *argv[])
-{
-    QCoreApplication app(argc,argv);
+int main( int argc, char *argv[] ) {
+    QCoreApplication app( argc, argv );
 
-    app.setApplicationName("Demo1");
-    app.setOrganizationName("Butterfly");
+    app.setApplicationName( "Demo1" );
+    app.setOrganizationName( "Butterfly" );
 
     // Find the configuration file
-    QString configFileName=searchConfigFile();
+    QString configFileName = searchConfigFile();
 
     // Configure logging into a file
     /*

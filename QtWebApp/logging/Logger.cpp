@@ -3,7 +3,7 @@
   @author Stefan Frings
 */
 
-#include "logger.h"
+#include "Logger.hpp"
 #include <stdio.h>
 #include <stdlib.h>
 #include <QMutex>

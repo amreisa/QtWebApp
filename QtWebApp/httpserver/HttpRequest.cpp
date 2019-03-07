@@ -12,12 +12,12 @@ using namespace stefanfrings;
 
 HttpRequest::HttpRequest( const QSettings* settings )
 {
-    status=waitForRequest;
-    currentSize=0;
-    expectedBodySize=0;
-    maxSize=settings->value( "maxRequestSize","16000" ).toInt();
-    maxMultiPartSize=settings->value( "maxMultiPartSize","1000000" ).toInt();
-    tempFile=nullptr;
+    status = waitForRequest;
+    currentSize = 0;
+    expectedBodySize = 0;
+    maxSize = settings->value( "maxRequestSize", "16000" ).toInt();
+    maxMultiPartSize = settings->value( "maxMultiPartSize", "1000000" ).toInt();
+    tempFile = nullptr;
 }
 
 
@@ -140,21 +140,17 @@ void HttpRequest::readHeader( QTcpSocket* socket )
 #endif
             status=complete;
         }
-        else if( boundary.isEmpty() && expectedBodySize+currentSize>maxSize )
-        {
+        else if ( boundary.isEmpty() && expectedBodySize+currentSize>maxSize ) {
             qWarning( "HttpRequest: expected body is too large" );
-            status=abort;
-        }
-        else if( !boundary.isEmpty() && expectedBodySize>maxMultiPartSize )
-        {
+            status = abort;
+        } else if ( !boundary.isEmpty() && expectedBodySize > maxMultiPartSize ) {
             qWarning( "HttpRequest: expected multipart body is too large" );
-            status=abort;
-        }
-        else {
+            status = abort;
+        } else {
 #ifdef SUPERVERBOSE
-            qDebug( "HttpRequest: expect %i bytes body",expectedBodySize );
+            qDebug( "HttpRequest: expect %i bytes body", expectedBodySize );
 #endif
-            status=waitForBody;
+            status = waitForBody;
         }
     }
 }

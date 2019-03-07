@@ -4,8 +4,8 @@
 */
 
 #include "templatecontroller.h"
-#include "templatecache.h"
-#include "template.h"
+#include "TemplateCache.hpp"
+#include "Template.hpp"
 
 /** Cache for template files */
 extern TemplateCache* templateCache;

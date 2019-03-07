@@ -3,13 +3,13 @@
   @author Stefan Frings
 */
 
-#ifndef LOGMESSAGE_H
-#define LOGMESSAGE_H
+#ifndef LOGMESSAGE_HPP
+#define LOGMESSAGE_HPP
 
 #include <QtGlobal>
 #include <QDateTime>
 #include <QHash>
-#include "logglobal.h"
+#include "LogGlobal.hpp"
 
 namespace stefanfrings {
 
@@ -95,4 +95,4 @@ private:
 
 } // end of namespace
 
-#endif // LOGMESSAGE_H
+#endif // LOGMESSAGE_HPP

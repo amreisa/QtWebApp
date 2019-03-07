@@ -3,15 +3,15 @@
   @author Stefan Frings
 */
 
-#ifndef TEMPLATELOADER_H
-#define TEMPLATELOADER_H
+#ifndef TEMPLATELOADER_HPP
+#define TEMPLATELOADER_HPP
 
 #include <QString>
 #include <QSettings>
 #include <QTextCodec>
 #include <QMutex>
-#include "templateglobal.h"
-#include "template.h"
+#include "TemplateGlobal.hpp"
+#include "Template.hpp"
 
 namespace stefanfrings {
 
@@ -84,4 +84,4 @@ protected:
 
 } // end of namespace
 
-#endif // TEMPLATELOADER_H
+#endif // TEMPLATELOADER_HPP
