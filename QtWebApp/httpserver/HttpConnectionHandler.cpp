@@ -8,10 +8,8 @@
 
 using namespace stefanfrings;
 
-HttpConnectionHandler::HttpConnectionHandler( const QSettings *settings,
-        HttpRequestHandler *requestHandler,
-        const QSslConfiguration* sslConfiguration )
-    : QObject()
+HttpConnectionHandler::HttpConnectionHandler( const QSettings *settings, HttpRequestHandler *requestHandler,
+                                              const QSslConfiguration* sslConfiguration ) : QObject()
 {
     Q_ASSERT( settings != nullptr );
     Q_ASSERT( requestHandler != nullptr );
@@ -42,14 +40,12 @@ HttpConnectionHandler::HttpConnectionHandler( const QSettings *settings,
     qDebug( "HttpConnectionHandler (%p): constructed", static_cast< void* >( this ) );
 }
 
-
 void HttpConnectionHandler::thread_done() {
     readTimer.stop();
     socket->close();
     delete socket;
     qDebug( "HttpConnectionHandler (%p): thread stopped", static_cast< void* >( this ) );
 }
-
 
 HttpConnectionHandler::~HttpConnectionHandler() {
     thread->quit();
@@ -161,7 +157,7 @@ void HttpConnectionHandler::read() {
         }
 
         // If the request is aborted, return error message and close the connection
-        if ( currentRequest->getStatus()==HttpRequest::abort ) {
+        if ( currentRequest->getStatus() == HttpRequest::abort ) {
             socket->write( "HTTP/1.1 413 entity too large\r\nConnection: close\r\n\r\n413 Entity too large\r\n" );
 
             while ( socket->bytesToWrite() ) { socket->waitForBytesWritten(); }
@@ -179,7 +175,7 @@ void HttpConnectionHandler::read() {
 
             // Copy the Connection:close header to the response
             HttpResponse response( socket );
-            bool closeConnection = QString::compare( currentRequest->getHeader( "Connection" ), "close",Qt::CaseInsensitive ) == 0;
+            bool closeConnection = QString::compare( currentRequest->getHeader( "Connection" ), "close", Qt::CaseInsensitive ) == 0;
 
             if ( closeConnection ) {
                 response.setHeader( "Connection","close" );
@@ -200,8 +196,7 @@ void HttpConnectionHandler::read() {
             try {
                 requestHandler->service( *currentRequest, response );
             } catch ( ... ) {
-                qCritical( "HttpConnectionHandler (%p): An uncatched exception occured in the request handler",
-                           static_cast< void* >( this ) );
+                qCritical( "HttpConnectionHandler (%p): An uncatched exception occured in the request handler", static_cast< void* >( this ) );
             }
 
             // Finalize sending the response if not already done

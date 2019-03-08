@@ -24,27 +24,24 @@ HttpListener::HttpListener( const QSettings* settings, HttpRequestHandler* reque
     listen();
 }
 
-
 HttpListener::~HttpListener() {
     close();
     qDebug( "HttpListener: destroyed" );
 }
 
-
-void HttpListener::listen()
-{
+void HttpListener::listen() {
     if ( !pool ) {
         pool = new HttpConnectionHandlerPool( settings,requestHandler );
     }
 
     QString host = settings->value( "host" ).toString();
-    quint16 port=settings->value( "port" ).toUInt() & 0xFFFF;
+    quint16 port = settings->value( "port" ).toUInt() & 0xFFFF;
     QTcpServer::listen( host.isEmpty() ? QHostAddress::Any : QHostAddress( host ), port );
 
     if ( !isListening() ) {
-        qCritical( "HttpListener: Cannot bind on port %i: %s",port,qPrintable( errorString() ) );
+        qCritical( "HttpListener: Cannot bind on port %i: %s", port, qPrintable( errorString() ) );
     } else {
-        qDebug( "HttpListener: Listening on port %i",port );
+        qDebug( "HttpListener: Listening on port %i", port );
     }
 }
 
@@ -77,10 +74,12 @@ void HttpListener::incomingConnection( tSocketDescriptor socketDescriptor ) {
     } else {
         // Reject the connection
         qDebug( "HttpListener: Too many incoming connections" );
-        QTcpSocket* socket=new QTcpSocket( this );
+        QTcpSocket* socket = new QTcpSocket( this );
         socket->setSocketDescriptor( socketDescriptor );
         connect( socket, SIGNAL( disconnected() ), socket, SLOT( deleteLater() ) );
         socket->write( "HTTP/1.1 503 too many connections\r\nConnection: close\r\n\r\nToo many connections\r\n" );
         socket->disconnectFromHost();
+        delete socket;
+        socket = nullptr;
     }
 }

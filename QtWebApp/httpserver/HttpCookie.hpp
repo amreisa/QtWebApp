@@ -37,9 +37,9 @@ public:
       @param httpOnly If true, the browser does not allow client-side scripts to access the cookie
     */
     HttpCookie( const QByteArray name, const QByteArray value, const int maxAge,
-                const QByteArray path="/", const QByteArray comment=QByteArray(),
-                const QByteArray domain=QByteArray(), const bool secure=false,
-                const bool httpOnly=false );
+                const QByteArray path = "/", const QByteArray comment = QByteArray(),
+                const QByteArray domain = QByteArray(), const bool secure = false,
+                const bool httpOnly = false );
 
     /**
       Create a cookie from a string.
@@ -118,7 +118,6 @@ private:
     bool secure;
     bool httpOnly;
     int version;
-
 };
 
 } // end of namespace

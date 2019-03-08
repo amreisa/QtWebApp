@@ -37,39 +37,38 @@
 ** $QT_END_LICENSE$
 **
 ****************************************************************************/
-/**
-  @file
-  @author Tolltech
-*/
 
 #ifndef QTSERVICE_H
 #define QTSERVICE_H
 
-#include <QtGlobal>
 #include <QCoreApplication>
 
-// This is specific to Windows dll's
 #if defined(Q_OS_WIN)
-    #if defined(QTWEBAPPLIB_EXPORT)
-        #define DECLSPEC Q_DECL_EXPORT
-    #elif defined(QTWEBAPPLIB_IMPORT)
-        #define DECLSPEC Q_DECL_IMPORT
-    #endif
-#endif
-#if !defined(DECLSPEC)
-    #define DECLSPEC
+#  if !defined(QT_QTSERVICE_EXPORT) && !defined(QT_QTSERVICE_IMPORT)
+#    define QT_QTSERVICE_EXPORT
+#  elif defined(QT_QTSERVICE_IMPORT)
+#    if defined(QT_QTSERVICE_EXPORT)
+#      undef QT_QTSERVICE_EXPORT
+#    endif
+#    define QT_QTSERVICE_EXPORT __declspec(dllimport)
+#  elif defined(QT_QTSERVICE_EXPORT)
+#    undef QT_QTSERVICE_EXPORT
+#    define QT_QTSERVICE_EXPORT __declspec(dllexport)
+#  endif
+#else
+#  define QT_QTSERVICE_EXPORT
 #endif
 
 class QStringList;
 class QtServiceControllerPrivate;
 
-class DECLSPEC QtServiceController
+class QT_QTSERVICE_EXPORT QtServiceController
 {
     Q_DECLARE_PRIVATE(QtServiceController)
 public:
     enum StartupType
     {
-	    AutoStartup = 0, ManualStartup
+        AutoStartup = 0, ManualStartup
     };
 
     QtServiceController(const QString &name);
@@ -84,7 +83,7 @@ public:
     QString serviceFilePath() const;
 
     static bool install(const QString &serviceFilePath, const QString &account = QString(),
-                const QString &password = QString());
+                        const QString &password = QString());
     bool uninstall();
 
     bool start(const QStringList &arguments);
@@ -100,14 +99,14 @@ private:
 
 class QtServiceBasePrivate;
 
-class DECLSPEC QtServiceBase
+class QT_QTSERVICE_EXPORT QtServiceBase
 {
     Q_DECLARE_PRIVATE(QtServiceBase)
 public:
 
     enum MessageType
     {
-	Success = 0, Error, Warning, Information
+        Success = 0, Error, Warning, Information
     };
 
     enum ServiceFlag
@@ -137,7 +136,7 @@ public:
     int exec();
 
     void logMessage(const QString &message, MessageType type = Success,
-                int id = 0, uint category = 0, const QByteArray &data = QByteArray());
+                    int id = 0, uint category = 0, const QByteArray &data = QByteArray());
 
     static QtServiceBase *instance();
 

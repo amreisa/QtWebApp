@@ -91,7 +91,6 @@ private slots:
 
     /** Received from the clean-up timer.  */
     void cleanup();
-
 };
 
 } // end of namespace
