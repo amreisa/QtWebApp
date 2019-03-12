@@ -8,7 +8,7 @@
 
 #include <HttpRequestHandler.hpp>
 
-using namespace stefanfrings;
+using namespace QtWebApp;
 
 /**
   The request mapper dispatches incoming HTTP requests to controller classes

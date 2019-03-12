@@ -10,7 +10,7 @@
 #include "HttpRequest.hpp"
 #include "HttpResponse.hpp"
 
-namespace stefanfrings {
+namespace QtWebApp {
 
 /**
    The request handler generates a response for each HTTP request. Web Applications

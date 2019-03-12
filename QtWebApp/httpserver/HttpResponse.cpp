@@ -5,7 +5,7 @@
 
 #include "HttpResponse.hpp"
 
-using namespace stefanfrings;
+using namespace QtWebApp;
 
 HttpResponse::HttpResponse( QTcpSocket *socket ) {
     this->socket=socket;

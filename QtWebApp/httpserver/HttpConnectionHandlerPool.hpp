@@ -8,7 +8,7 @@
 #include "HttpGlobal.hpp"
 #include "HttpConnectionHandler.hpp"
 
-namespace stefanfrings {
+namespace QtWebApp {
 
 /**
   Pool of http connection handlers. The size of the pool grows and

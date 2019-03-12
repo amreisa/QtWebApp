@@ -7,7 +7,7 @@
 #include <QDateTime>
 #include <QUuid>
 
-using namespace stefanfrings;
+using namespace QtWebApp;
 
 HttpSession::HttpSession( bool canStore ) {
     if ( canStore ) {

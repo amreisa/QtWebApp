@@ -8,7 +8,7 @@
 #include <QDir>
 #include "HttpCookie.hpp"
 
-using namespace stefanfrings;
+using namespace QtWebApp;
 
 HttpRequest::HttpRequest( const QSettings* settings ) {
     status = waitForRequest;

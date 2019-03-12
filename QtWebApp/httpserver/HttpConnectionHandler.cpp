@@ -6,7 +6,7 @@
 #include "HttpConnectionHandler.hpp"
 #include "HttpResponse.hpp"
 
-using namespace stefanfrings;
+using namespace QtWebApp;
 
 HttpConnectionHandler::HttpConnectionHandler( const QSettings *settings, HttpRequestHandler *requestHandler,
                                               const QSslConfiguration* sslConfiguration ) : QObject()

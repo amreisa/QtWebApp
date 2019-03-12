@@ -10,7 +10,7 @@
 #include <HttpResponse.hpp>
 #include <HttpRequestHandler.hpp>
 
-using namespace stefanfrings;
+using namespace QtWebApp;
 
 /**
   This controller generates a website using the template engine.

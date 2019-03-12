@@ -6,7 +6,7 @@
 #include "Template.hpp"
 #include <QFileInfo>
 
-using namespace stefanfrings;
+using namespace QtWebApp;
 
 Template::Template(const QString source, const QString sourceName)
     : QString(source)

@@ -14,7 +14,7 @@
 #include "LogGlobal.hpp"
 #include "Logger.hpp"
 
-namespace stefanfrings {
+namespace QtWebApp {
 
 /**
   Logger that uses a text file for output. Settings are read from a

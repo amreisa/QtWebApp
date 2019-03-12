@@ -8,7 +8,7 @@
 
 #include <HttpRequestHandler.hpp>
 
-using namespace stefanfrings;
+using namespace QtWebApp;
 
 /**
   The request handler receives incoming HTTP requests and generates responses.

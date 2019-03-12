@@ -10,7 +10,7 @@
 #include "qtservice.h"
 #include <HttpListener.hpp>
 
-using namespace stefanfrings;
+using namespace QtWebApp;
 
 /**
   Helper class to install and run the application as a windows

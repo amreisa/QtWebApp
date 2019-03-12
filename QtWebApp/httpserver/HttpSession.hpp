@@ -11,7 +11,7 @@
 #include <QReadWriteLock>
 #include "HttpGlobal.hpp"
 
-namespace stefanfrings {
+namespace QtWebApp {
 
 /**
   This class stores data for a single HTTP session.

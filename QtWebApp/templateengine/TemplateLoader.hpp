@@ -13,7 +13,7 @@
 #include "TemplateGlobal.hpp"
 #include "Template.hpp"
 
-namespace stefanfrings {
+namespace QtWebApp {
 
 /**
   Loads localized versions of template files. If the caller requests a file with the

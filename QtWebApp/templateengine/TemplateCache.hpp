@@ -5,7 +5,7 @@
 #include "TemplateGlobal.hpp"
 #include "TemplateLoader.hpp"
 
-namespace stefanfrings {
+namespace QtWebApp {
 
 /**
   Caching template loader, reduces the amount of I/O and improves performance

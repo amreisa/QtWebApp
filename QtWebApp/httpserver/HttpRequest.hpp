@@ -16,7 +16,7 @@
 #include <QUuid>
 #include "HttpGlobal.hpp"
 
-namespace stefanfrings {
+namespace QtWebApp {
 
 /**
   This object represents a single HTTP request. It reads the request

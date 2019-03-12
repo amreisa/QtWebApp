@@ -5,7 +5,7 @@
 
 #include "HttpCookie.hpp"
 
-using namespace stefanfrings;
+using namespace QtWebApp;
 
 HttpCookie::HttpCookie() {
     version = 1;

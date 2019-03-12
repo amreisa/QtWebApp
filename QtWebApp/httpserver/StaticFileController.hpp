@@ -13,7 +13,7 @@
 #include "HttpResponse.hpp"
 #include "HttpRequestHandler.hpp"
 
-namespace stefanfrings {
+namespace QtWebApp {
 
 /**
   Delivers static files. It is usually called by the applications main request handler when

@@ -5,7 +5,7 @@
 
 #include "startup.h"
 
-using namespace stefanfrings;
+using namespace QtWebApp;
 
 /**
   Entry point of the program.

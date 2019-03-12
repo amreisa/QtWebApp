@@ -14,7 +14,7 @@
 #include "HttpConnectionHandlerPool.hpp"
 #include "HttpRequestHandler.hpp"
 
-namespace stefanfrings {
+namespace QtWebApp {
 
 /**
   Listens for incoming TCP connections and and passes all incoming HTTP requests to your implementation of HttpRequestHandler,

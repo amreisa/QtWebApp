@@ -13,7 +13,7 @@
 #include "Logger.hpp"
 #include "FileLogger.hpp"
 
-namespace stefanfrings {
+namespace QtWebApp {
 
 /**
   Logs messages into two log files simultaneously.
