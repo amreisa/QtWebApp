@@ -47,7 +47,7 @@ public:
       caller should destroy it during shutdown.
       @param parent Parent object
      */
-    HttpSessionStore( const QSettings* settings, QObject* parent=nullptr );
+    HttpSessionStore( const QSettings* settings, QObject* parent = nullptr );
 
     /** Destructor */
     virtual ~HttpSessionStore();
@@ -73,7 +73,7 @@ public:
        @return If autoCreate is disabled, the function returns a null session if there is no session.
        @see HttpSession::isNull()
     */
-    HttpSession getSession( HttpRequest& request, HttpResponse& response, const bool allowCreate=true );
+    HttpSession getSession( HttpRequest& request, HttpResponse& response, const bool allowCreate = true );
 
     /**
        Get a HTTP session by it's ID number.
@@ -89,7 +89,7 @@ public:
 
 protected:
     /** Storage for the sessions */
-    QMap<QByteArray,HttpSession> sessions;
+    QMap< QByteArray, HttpSession > sessions;
 
 private:
 

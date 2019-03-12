@@ -42,7 +42,7 @@ class DECLSPEC HttpRequest {
 public:
 
     /** Values for getStatus() */
-    enum RequestStatus {waitForRequest, waitForHeader, waitForBody, complete, abort};
+    enum RequestStatus { waitForRequest, waitForHeader, waitForBody, complete, abort };
 
     /**
       Constructor.
@@ -146,7 +146,7 @@ public:
     QByteArray getCookie( const QByteArray& name ) const;
 
     /** Get all cookies. */
-    QMap<QByteArray,QByteArray>& getCookieMap();
+    QMap< QByteArray, QByteArray >& getCookieMap();
 
     /**
       Get the address of the connected client.

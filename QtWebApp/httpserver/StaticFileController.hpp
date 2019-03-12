@@ -86,7 +86,7 @@ private:
     int maxCachedFileSize;
 
     /** Cache storage */
-    QCache<QString,CacheEntry> cache;
+    QCache< QString, CacheEntry > cache;
 
     /** Used to synchronize cache access for threads */
     QMutex mutex;

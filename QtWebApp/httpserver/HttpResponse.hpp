@@ -123,7 +123,7 @@ public:
 private:
 
     /** Request headers */
-    QMap<QByteArray,QByteArray> headers;
+    QMap< QByteArray, QByteArray > headers;
 
     /** Socket for writing output */
     QTcpSocket* socket;

@@ -48,3 +48,6 @@
 ٠٧.٠٣.٢٠١٩ ١٩:٥٧:٢٠.٨٦٠ 0 DEBUG    0x7f1e28b25800 ServiceHelper: Starting service
 ٠٧.٠٣.٢٠١٩ ١٩:٥٧:٢٠.٨٦١ 2 CRITICAL 0x7f1e28b25800 HttpListener: Cannot bind on port 8080: The bound address is already in use
 ٠٧.٠٣.٢٠١٩ ١٩:٥٧:٢٠.٨٦١ 1 WARNING  0x7f1e28b25800 Startup: Service has started
+١٠.٠٣.٢٠١٩ ١٧:٠٧:٣٥.٨٥٩ 0 DEBUG    0x7f4b5c56a800 ServiceHelper: Starting service
+١٠.٠٣.٢٠١٩ ١٧:٠٧:٣٥.٨٥٩ 0 DEBUG    0x7f4b5c56a800 HttpListener: Listening on port 8080
+١٠.٠٣.٢٠١٩ ١٧:٠٧:٣٥.٨٥٩ 1 WARNING  0x7f4b5c56a800 Startup: Service has started

@@ -19,62 +19,43 @@ extern FileLogger* logger;
 /** Controller for static files */
 extern StaticFileController* staticFileController;
 
-RequestMapper::RequestMapper(QObject* parent)
-    :HttpRequestHandler(parent)
+RequestMapper::RequestMapper( QObject* parent )
+    : HttpRequestHandler( parent )
 {
-    qDebug("RequestMapper: created");
+    qDebug( "RequestMapper: created" );
 }
 
-
-RequestMapper::~RequestMapper()
-{
-    qDebug("RequestMapper: deleted");
+RequestMapper::~RequestMapper() {
+    qDebug( "RequestMapper: deleted" );
 }
 
-void RequestMapper::service( HttpRequest& request, HttpResponse& response )
-{
-    QByteArray path=request.getPath();
-    qDebug("RequestMapper: path=%s",path.data());
+void RequestMapper::service( HttpRequest& request, HttpResponse& response ) {
+    QByteArray path = request.getPath();
+    qDebug( "RequestMapper: path=%s", path.data() );
 
     // For the following pathes, each request gets its own new instance of the related controller.
 
-    if (path.startsWith("/dump"))
-    {
-        DumpController().service(request, response);
-    }
-
-    else if (path.startsWith("/template"))
-    {
+    if ( path.startsWith( "/dump" ) ) {
+        DumpController().service( request, response );
+    } else if ( path.startsWith( "/template" ) ) {
         TemplateController().service(request, response);
-    }
-
-    else if (path.startsWith("/form"))
-    {
+    } else if ( path.startsWith( "/form" ) ) {
         FormController().service(request, response);
-    }
-
-    else if (path.startsWith("/file"))
-    {
+    } else if ( path.startsWith( "/file" ) ) {
         FileUploadController().service(request, response);
+    } else if ( path.startsWith( "/session" ) ) {
+        SessionController().service( request, response );
     }
-
-    else if (path.startsWith("/session"))
-    {
-        SessionController().service(request, response);
-    }
-
     // All other pathes are mapped to the static file controller.
     // In this case, a single instance is used for multiple requests.
-    else
-    {
-        staticFileController->service(request, response);
+    else {
+        staticFileController->service( request, response );
     }
 
-    qDebug("RequestMapper: finished request");
+    qDebug( "RequestMapper: finished request" );
 
     // Clear the log buffer
-    if (logger)
-    {
+    if ( logger ) {
        logger->clear();
     }
 }
